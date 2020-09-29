@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- concepts: callback, arrow function -->
+<html>
+<head>
+<script>
+    function calculate(nr1, nr2, operation, callback) {
+        const result = operation(nr1, nr2);
+
+        if (callback) {
+            callback(result);
+        }
+        else {
+            return result;
+        }
+    }
+
+    // variant 1: concrete function
+    function operationSum(a, b) {
+        return a + b;
+    }
+
+    function showResult(res) {
+        alert("Ergebnis: " + res);
+    }
+
+    calculate(
+        1,
+        2,
+        operationSum,
+        showResult
+    );
+
+    // variant 2: anonymous function
+    calculate(
+        1,
+        2,
+        function(a, b) {
+            return a + b;
+        },
+        function(res) {
+            alert("Ergebnis: " + res);
+        }
+    );
+
+    // variant 3: arrow function
+    calculate(
+        1,
+        2,
+        (a, b) => a + b,
+        res => alert("Ergebnis: " + res)
+    );
+</script>
+</head>
+</html>
