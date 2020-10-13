@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- concepts:  -->
+<html>
+<head>
+<script>
+    function fetchUsers() {
+        return fetch("https://randomuser.me/api?results=10")
+            .then(response => response.json())
+            .then(data => data.results);
+    }
+
+    function updateUsers() {
+        fetchUsers()   // returns promise
+            .then(users => {
+                let html =
+                    "<ul>" +
+                    users
+                        .filter(user => user.gender === "female")
+                        .map(user => `<li>${user.name.first} ${user.name.last}</li>`)
+                        .join("") +
+                    "</ul>";
+
+                document.getElementById("content").innerHTML = html; 
+            });
+    }
+</script>
+</head>
+<body onload="updateUsers()">
+    <button onclick="updateUsers()">Benutzer aktualisieren</button>
+    <div id="content"></div>
+</body>
+</html>
