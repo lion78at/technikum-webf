@@ -39,7 +39,7 @@ time: number = 30</panel_attributes>
     </coordinates>
     <panel_attributes>lt=[&gt;]-()
 &lt;&lt;event&gt;&gt;
-finish: string</panel_attributes>
+finish</panel_attributes>
     <additional_attributes>10.0;30.0;250.0;30.0</additional_attributes>
   </element>
   <element>
