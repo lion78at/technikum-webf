@@ -1,6 +1,6 @@
 package at.technikumwien;
 
-import java.util.List;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -14,7 +14,7 @@ public class DBInitializer {
 		
 	@EventListener(ApplicationReadyEvent.class)
 	public void handleApplicationReady() {
-		newsRepository.saveAll(List.of(
+		newsRepository.saveAll(Arrays.asList(
 			new News("Hello World!", "Herzlich willkommen am Planeten Erde."),
 			new News("News-Portal online!", "Unser neues News-Portal ist online.")
 		));

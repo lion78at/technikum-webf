@@ -1,5 +1,6 @@
 package at.technikumwien;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class NewsResource {
         news.setId(null);   // better safe than sorry
         news = newsRepository.save(news);
         
-        var location = WebMvcLinkBuilder.linkTo(
+        URI location = WebMvcLinkBuilder.linkTo(
 			WebMvcLinkBuilder.methodOn(getClass()).retrieve(news.getId())
 		).toUri();
 		
