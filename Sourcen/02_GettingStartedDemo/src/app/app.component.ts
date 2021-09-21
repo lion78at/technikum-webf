@@ -7,23 +7,48 @@ import { Component } from '@angular/core';
 
     <p>
       <label>Größe:
-        <input> cm
+        <input [(ngModel)]="height" (input)="resetBMI()"> cm
       </label>
     </p>
 
     <p>
       <label>Gewicht:
-        <input> kg
+        <input [(ngModel)]="weight" (input)="resetBMI()"> kg
       </label>
     </p>
 
-    <button>BMI berechnen</button>
+    <button (click)="calculateBMI()">BMI berechnen</button>
 
-    <h2>Dein BMI: 20.95</h2>
-    <img src="">
+    <div *ngIf="bmi">
+      <h2>Dein BMI: {{ bmi | number:'.2-2' }}</h2>
+      <img [src]="animal">
+    </div>
   `,
   styles: []
 })
 export class AppComponent {
+  height = 175;
+  weight = 75;
+  bmi: number;
+  animal: string;
 
+  calculateBMI(): void {
+    // alert(this.height + " " + this.weight);
+
+    this.bmi = this.weight / (this.height / 100) ** 2;
+
+    if (this.bmi < 20) {
+      this.animal = 'assets/giraffe.jpg';
+    }
+    else if (this.bmi < 25) {
+      this.animal = 'assets/horse.jpg';
+    }
+    else {
+      this.animal = 'assets/elephant.jpg';
+    }
+  }
+
+  resetBMI(): void {
+    this.bmi = null;
+  }
 }
