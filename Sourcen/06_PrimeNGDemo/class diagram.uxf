@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>30</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>bg=#FFe6FF
+&lt;&lt;ifc&gt;&gt;
+/SuperHero/
+--
+/+name: string/
+/+alterEgo: string/
+/+actor: string/
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
