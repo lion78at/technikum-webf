@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NewsService } from './news.service';
 import { News } from './types';
 
@@ -39,6 +39,7 @@ import { News } from './types';
   `]
 })
 export class NewsListComponent implements OnInit {
+  @Output() select = new EventEmitter<number>();
   newsList: News[] = [];
 
   constructor(private newsService: NewsService) {}
@@ -52,9 +53,13 @@ export class NewsListComponent implements OnInit {
       .then(newsList => this.newsList = newsList);
   }
 
-  addNews(): void {}
+  addNews(): void {
+    this.select.emit();
+  }
 
-  editNews(news: News): void {}
+  editNews(news: News): void {
+    this.select.emit(news.id);
+  }
 
   deleteNews(news: News): void {
     if (confirm('Willst du die News wirklich löschen?')) {

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Nov 30 18:14:46 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017d-71d7-7120-000004e21c00 
+on database directory memory:E:\Technikum-WEBF\Sourcen\09_RESTDemo\Java\target\6c63028c-ef36-4974-ab01-787957894373 with class loader org.springframework.boot.loader.LaunchedURLClassLoader@5b275dab 
+Loaded from jar:file:/E:/Technikum-WEBF/Sourcen/09_RESTDemo/Java/target/RESTDemo-1.0.0-SNAPSHOT.jar!/BOOT-INF/lib/derby-10.14.2.0.jar!/
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.13+10-LTS-370
+user.dir=E:\Technikum-WEBF\Sourcen\09_RESTDemo\Java\target
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
